@@ -1,0 +1,6 @@
+{
+    "devices" : [
+        "https://raw.githubusercontent.com/omnirom/android_device_oneplus_oneplus7t/android-10",
+        "https://raw.githubusercontent.com/omnirom/android_device_oneplus_oneplus6/android-10"
+    ]
+}
