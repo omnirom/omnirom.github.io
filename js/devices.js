@@ -18,8 +18,9 @@ function loadDevice(url) {
     .then(response => {
       let device = response.data;
       let d = device;
+      console.log(d);
       d['image'] = url + "/" + device['image']
-      addDevice(d["image"], d["model"], d["make"], d["pageUrl"]);
+      addDevice(d);
     })
     .catch(error => {
       console.log("loadDevice " + url, error);
@@ -45,18 +46,26 @@ function loadGithubRepos() {
 }
 
 function buildDevices() {
+  let d = {};
+  d['model'] = "All Devices";
+  d['make'] = "All Manufactures";
+  d['state'] = "";
+  d['pageUrl'] = "https://dl.omnirom.org/";
+  d['image'] = "images/default_phone_omni.png";
+  addDevice(d);
+  
   loadGithubRepos();
 }
 
-function addDevice(image, model, make, pageUrl) {
+function addDevice(device) {
   let container = document.getElementById("device-list");
   const card = `
         <div class="card" style="width: 18rem;">
-            <img src="${image}" class="card-img-top" width="250" >
+            <img src="${device['image']}" class="card-img-top" width="250" >
             <div class="card-body">
-              <h5 class="card-title">${model}</h5>
-              <p class="card-text">${make}</p>
-              <a href="${pageUrl}" class="btn btn-primary">Download</a>
+              <h5 class="card-title">${device['model']}</h5>
+              <p class="card-text">${device['make']}<br>${device['state']}</p>
+              <a href="${device['pageUrl']}" class="btn btn-primary">Download</a>
             </div>
           </div> 
       `;
