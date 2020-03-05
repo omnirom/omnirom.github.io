@@ -27,10 +27,10 @@ function loadDevice(url) {
     });
 }
 
-function loadGithubRepos() {
+function loadGithubRepos(branch) {
   axios
-    .get("https://gerrit.omnirom.org/projects/?b=android-10&p=android_device", {
-    })
+    .get("https://gerrit.omnirom.org/projects/?b=" + branch + "&p=android_device", {
+      })
     .then(response => {
       let magic = ")]}'";
       let repos = response.data.substring(magic.length);
@@ -53,8 +53,8 @@ function buildDevices() {
   d['pageUrl'] = "https://dl.omnirom.org/";
   d['image'] = "images/default_phone_omni.png";
   addDevice(d);
-  
-  loadGithubRepos();
+
+  loadGithubRepos('android-10');
 }
 
 function addDevice(device) {
