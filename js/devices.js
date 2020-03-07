@@ -49,7 +49,7 @@ function buildDevices() {
   let d = {};
   d['model'] = "All Devices";
   d['make'] = "All Manufactures";
-  d['state'] = "";
+  d['state'] = "official";
   d['pageUrl'] = "https://dl.omnirom.org/";
   d['image'] = "images/default_phone_omni.png";
   addDevice(d);
@@ -61,7 +61,7 @@ function addDevice(device) {
   let container = document.getElementById("device-list");
   const card = `
         <div class="card" style="width: 18rem;">
-            <img src="${device['image']}" class="card-img-top" width="250" >
+            <img src="${device['image']}" class="card-img-top" width="250" alt="${device['model']}" >
             <div class="card-body">
               <h5 class="card-title">${device['model']}</h5>
               <p class="card-text">${device['make']}<br>${device['state']}</p>
