@@ -50,7 +50,7 @@ function buildDevices() {
   d['make'] = "All Manufactures";
   d['state'] = "official";
   d['pageUrl'] = "https://dl.omnirom.org/";
-  d['image'] = "images/default_phone_omni.png";
+  d['image'] = "../images/default_phone_omni.png";
   addDevice(d);
 
   loadGithubRepos('android-10');
