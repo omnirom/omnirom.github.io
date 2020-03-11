@@ -11,20 +11,19 @@
   <title>OmniROM</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/scrolling-nav.css" rel="stylesheet">
+  <link href="/css/scrolling-nav.css" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 
 <header>
   <div class="overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="images/omni.mp4" type="video/mp4">
+    <source src="/images/omni.mp4" type="video/mp4">
   </video>
   </div>
 </header>
@@ -42,123 +41,42 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#about" style="color: #fff;">About</a>
+            <a class="nav-link js-scroll-trigger" href="#" onclick="buildAbout()" style="color: #fff;">About</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#contact" style="color: #fff;">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#" onclick="buildContacts()" style="color: #fff;">Contact</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#devices" style="color: #fff;">Devices</a>
+            <a class="nav-link js-scroll-trigger" href="#" onclick="buildDevices()" style="color: #fff;">Devices</a>
           </li>
-                    <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="screenshots/index.html" style="color: #fff;">Screenshots</a>
+          <li class="nav-item-active">
+            <a class="nav-link js-scroll-trigger" href="#" onclick="buildScreenshotList()" style="color: #fff;">Screenshots</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>About Omni</h2>
-          <p class="lead">
-            OmniROM is our Android custom ROM variant, feature-packed but always with stability as #1 priority in mind.
-          </p>
-          <p class="lead">
-            Based on the Android Open Source Project (AOSP) and enriched by our developers with lots of custom
-            enhancements, OmniROM has set out to give you a great Android experience on your mobile.
-            <p class="lead">
-              Omni isn’t better, just different.</p>
-            <p class="lead">
-              It’s another option for the billion Android users out there. Android (vs. iOS and every other mobile OS)
-              has
-              thrived on options as well as the gigantic, talented development community that has emerged to build those
-              options. That’s the beauty of Android – that you can pick and choose from a smorgasbord of devices with
-              varying features and functionality.
-            </p>
-            <p class="lead">
-              Omni is a chance to get involved, no matter who you are.</p>
-            <p class="lead">
-              Developers, whether you’ve been developing apps for a week, or ROM features for 3 years, you’re welcome.
-              Users, we know you want to help out, and now you can - we encourage all levels of contribution, from code
-              to
-              reporting bugs to squashing bugs to (what developer's tend to hate) documentation.</p>
-          </p>
-        </div>
-      </div>
+  <section id="sub">
+    <div class="container" id="sub-container">
     </div>
   </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Contact</h2>
-          <p class="lead">
-            The core of Omni is the community, and we recognize that everyone has a role to play. So we have a number of
-            ways for you to get involved:</p>
-          <ul>
-            <li>
-              <p class="lead">
-                <a href="http://github.com/omnirom">Github</a> – our codebase where we build from.</p>
-            </li>
-            <li>
-              <p class="lead"><a href="http://gerrit.omnirom.org/">Gerrit</a> – view our project at the code level with
-                the ability to see what’s merged, what’s
-                open and
-                what’s in review.</p>
-            </li>
-            <li>
-              <p class="lead"><a href="https://t.me/OmniROM_Community">Telegram</a> – get connected to the Omni
-                community in realtime on Telegram</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="devices">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h2>Devices</h2>
-          <div class="row" id="device-list">
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; OmniROM 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
+  <script src="/js/scrolling-nav.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="js/devices.js"></script>
+  <script src="/js/devices.js"></script>
+  <script src="/js/screenshots.js"></script>
+  <script src="/js/static-text.js"></script>
   <script>
-    buildDevices();
-  </script>
-  <script src="js/screenshots.js"></script>
-  <script>
-    buildScreenshotList();
+    buildAbout();
   </script>
 </body>
 

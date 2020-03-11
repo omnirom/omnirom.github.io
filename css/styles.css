@@ -6,8 +6,7 @@ body {
 header {
     position: relative;
     background-color: black;
-    height: 30vh;
-    min-height: 25rem;
+    height: 10vh;
     width: 100%;
     overflow: hidden;
   }
@@ -16,10 +15,8 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 50%;
-    min-height: 50%;
-    width: auto;
-    height: auto;
+    height: 100%;
+    width: 100%;
     z-index: 0;
     -ms-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
@@ -34,7 +31,7 @@ header {
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: 1;
   }
 

@@ -12,6 +12,16 @@ function loadJSON(url, callback) {
 }
 
 function buildScreenshotList() {
+  let container = document.getElementById("sub-container");
+  const row = `
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+      <h2>Screenshots</h2>
+      <div class="row" id="screenshot-list">
+      </div>
+    </div>
+  </div> `;
+  container.innerHTML = row;
   loadJSON("https://api.github.com/repos/omnirom/omnirom.github.io/contents/screenshots", function(response){
     let files = JSON.parse(response);
     files.forEach(file => {
@@ -28,8 +38,7 @@ function addScreenshot(image) {
   let container = document.getElementById("screenshot-list");
   const card = `
         <div class="card" style="width: 18rem;">
-            <img src="${image}" class="card-img-top" width="250" alt="Screenshot" >
-          </div> 
-      `;
+            <img src="${image}" class="card-img-top" width="200" alt="Screenshot" >
+          </div>  `;
   container.innerHTML += card;
 }
