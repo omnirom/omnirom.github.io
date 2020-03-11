@@ -18,7 +18,6 @@ function loadDevice(url) {
     .then(response => {
       let device = response.data;
       let d = device;
-      console.log(d);
       d['image'] = url + "/" + device['image']
       addDevice(d);
     })
