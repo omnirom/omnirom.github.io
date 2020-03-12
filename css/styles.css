@@ -1,46 +1,51 @@
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Source Sans Pro', serif;
+  font-weight: bold;
 }
 
 header {
-    position: relative;
-    background-color: black;
-    height: 10vh;
-    width: 100%;
-    overflow: hidden;
-  }
+  position: relative;
+  background-color: black;
+  height: 10vh;
+  width: 100%;
+  overflow: hidden;
+}
   
-  header video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-  }
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
   
-  header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.2;
-    z-index: 1;
-  }
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  z-index: 1;
+}
 
-  .navbar-brand {
-    font-size: 1.50rem;
-  }
+.navbar-brand {
+  font-size: 1.50rem;
+}
 
-  .nav-link {
-    font-size: 1.40rem;
-  }
+.nav-link {
+  font-size: 1.40rem;
+}
 
 
