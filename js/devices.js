@@ -62,7 +62,7 @@ async function addDevice(device) {
             <div class="card-body">
               <h5 class="card-title">${device['model']}</h5>
               <p class="card-text">${device['make']}<br>${device['state']}</p>
-              <a href="${device['pageUrl']}" class="btn btn-primary">Download</a>
+              <a href="${device['pageUrl']}" class="btn btn-omni">Download</a>
             </div>
           </div> `;
   container.innerHTML += card;
