@@ -63,3 +63,27 @@ header .overlay {
 .card:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22);
 }
+
+.btn-omni {
+  color: #a1c729;
+  background-color: #fff;
+  border-color: #a1c729;
+}
+
+.btn-omni:hover {
+  color: #fff;
+  background-color: #a1c729;
+  border-color: #a1c729;
+}
+
+.btn-omni:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #a1c729(0, 123, 255, 0.25);
+}
+
+.btn-omni:not(:disabled):not(.disabled):active, .btn-omni:not(:disabled):not(.disabled).active,
+.show > .btn-omni.dropdown-toggle {
+  color: #fff;
+  background-color: #a1c729;
+  border-color: #a1c729;
+}
