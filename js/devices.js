@@ -57,7 +57,7 @@ function buildDevices() {
 async function addDevice(device) {
   let container = document.getElementById("device-list");
   const card = `
-        <div class="card" style="width: 18rem;">
+        <div class="card device-card" style="width: 18rem;">
             <img src="${device['image']}" class="card-img-top" width="250" alt="${device['model']}" >
             <div class="card-body">
               <h5 class="card-title">${device['model']}</h5>
