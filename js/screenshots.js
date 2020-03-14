@@ -14,11 +14,9 @@ function loadJSON(url, callback) {
 function buildScreenshotList() {
   let container = document.getElementById("sub-container");
   const row = `
-  <div class="row">
-    <div class="col-lg-12 mx-auto">
-      <h2>Screenshots</h2>
-      <div class="row" id="screenshot-list">
-      </div>
+  <div class="col-lg-12 mx-auto">
+    <h2>Screenshots</h2>
+    <div class="row" id="screenshot-list">
     </div>
   </div> `;
   container.innerHTML = row;
