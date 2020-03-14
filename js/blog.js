@@ -22,11 +22,11 @@ async function buildBlogList() {
   container.innerHTML = blog;
   loadJSON("https://api.github.com/repos/omnirom/omnirom.github.io/contents/blog", async function (response) {
     let files = await JSON.parse(response);
-    files.reverse().forEach(file => {
+    files.reverse().forEach(async function(file) {
       let url = file['download_url'];
       let ext = file['path'].split('.').pop();
       if (ext == "json") {
-        loadBlogPost(url);
+        await loadBlogPost(url);
       }
     });
   });
