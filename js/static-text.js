@@ -1,7 +1,6 @@
 function buildContacts() {
   let container = document.getElementById("sub-container");
   const row = `
-  <div class="row">
     <div class="col-lg-8 mx-auto">
       <h2>Contacts</h2>
       <p class="lead">
@@ -27,7 +26,6 @@ function buildContacts() {
           </li>
           </ul>
       </div>
-    </div>
   </div> `;
   container.innerHTML = row;
 }
@@ -35,7 +33,6 @@ function buildContacts() {
 function buildAbout() {
   let container = document.getElementById("sub-container");
   const row = `
-  <div class="row">
     <div class="col-lg-8 mx-auto">
     <h2>About Omni</h2>
     <p class="lead">
@@ -62,7 +59,6 @@ function buildAbout() {
         reporting bugs to squashing bugs to (what developer's tend to hate) documentation.</p>
     </p>
       </div>
-    </div>
   </div>  `;
   container.innerHTML = row;
 }
