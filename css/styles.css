@@ -87,3 +87,23 @@ header .overlay {
   background-color: #a1c729;
   border-color: #a1c729;
 }
+
+.post-meta {
+  font-style: italic;
+  color: #505050;
+}
+
+.post-text {
+  font-size: larger;
+}
+
+.post-content {
+  margin-left: 200px;
+  text-align: start;
+}
+
+.post {
+  margin: 20px;
+}
+
+
