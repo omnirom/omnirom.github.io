@@ -34,11 +34,9 @@ async function loadGithubRepos(branch) {
 function buildDevices() {
   let container = document.getElementById("sub-container");
   const row = `
-  <div class="row">
-    <div class="col-lg-12 mx-auto">
-      <h2>Devices</h2>
-      <div class="row" id="device-list">
-      </div>
+  <div class="col-lg-12 mx-auto">
+    <h2>Devices</h2>
+    <div class="row" id="device-list">
     </div>
   </div> `;
   container.innerHTML = row;
