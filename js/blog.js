@@ -56,16 +56,16 @@ function addBlogPost(post, url) {
   let container = document.getElementById("post-list");
   const postItem = `
         <div class="post">
-          <img src="${image}" class="float-left" width="128" alt="" />
-          <div class="post-content">
-          <h2 class="post-title" >
-              ${post['title']}
-          </h2>
+          <div class="post-header" >
+           <img src="${image}" class="post-image vertical-center" />
+            <p class="post-title vertical-center" >
+                ${post['title']}
+            </p>
+          </div>
           <p class="post-text">
             ${post['content']}
           </p>
           <p class="post-meta">Posted by ${post['writer']} on ${post['date']}</p>
-          </div>
         </div> `
   container.innerHTML += postItem;
 }

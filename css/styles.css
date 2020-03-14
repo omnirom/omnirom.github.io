@@ -97,13 +97,48 @@ header .overlay {
   font-size: larger;
 }
 
-.post-content {
-  margin-left: 200px;
-  text-align: start;
-}
-
 .post {
-  margin: 20px;
+  margin: 10px;
 }
 
+.post-image {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  float: left !important;
+}
 
+.post-title {
+  font-size: 28px;
+  font-family: 'Source Sans Pro', serif;
+  font-weight: bold;
+  margin-left: 90px;
+}
+
+.post-header {
+  height: 92px;
+  position: relative;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 750px){
+  .post-image {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    float: left !important;
+  }
+
+  .post-title {
+    font-size: 24px;
+    font-family: 'Source Sans Pro', serif;
+    font-weight: bold;
+    margin-left: 76px;
+  }
+}
