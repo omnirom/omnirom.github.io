@@ -1,6 +1,6 @@
 {
     "title": "Adding support for builds with micorG baked in",
-    "content": "We will support weekly builds with baked in microG. The following prebuilt apks will be added <a href=\"https://github.com/omnirom/android_prebuilts_prebuiltapks\">repository</a><br>We will start with the currently unofficial devices oneplus7t oneplus7tpro and def.<br>More devices will maybe come later.",
+    "content": "We will support weekly builds with baked in microG.<br>The following prebuilt apks will be added (<a href=\"https://github.com/omnirom/android_prebuilts_prebuiltapks\">repository</a>). We will start with the currently unofficial devices. More devices will maybe come later.",
     "writer": "maxwen",
     "date": "2020-03-10"
 }
