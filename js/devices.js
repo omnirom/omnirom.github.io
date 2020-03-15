@@ -36,7 +36,7 @@ function buildDevices() {
   const row = `
   <div class="col-lg-12 mx-auto">
     <h2>Devices</h2>
-    <div class="row" id="device-list">
+    <div class="row justify-content-center" id="device-list">
     </div>
   </div> `;
   container.innerHTML = row;

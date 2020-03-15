@@ -16,7 +16,7 @@ function buildScreenshotList() {
   const row = `
   <div class="col-lg-12 mx-auto">
     <h2>Screenshots</h2>
-    <div class="row" id="screenshot-list">
+    <div class="row justify-content-center" id="screenshot-list">
     </div>
   </div> `;
   container.innerHTML = row;

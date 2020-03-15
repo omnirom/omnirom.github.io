@@ -16,7 +16,7 @@ async function buildBlogList() {
   const blog = `
   <div class="col-lg-10 mx-auto">
     <h2>Blog</h2>
-    <div class="row" id="post-list">
+    <div class="row justify-content-center" id="post-list">
     </div>
   </div> `;
   container.innerHTML = blog;
