@@ -41,19 +41,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#" onclick="buildAbout()" style="color: #fff;">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about" style="color: #fff;">About</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#" onclick="buildBlogList()" style="color: #fff;">Blog</a>
+            <a class="nav-link js-scroll-trigger" href="#blog" style="color: #fff;">Blog</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#" onclick="buildContacts()" style="color: #fff;">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact" style="color: #fff;">Contact</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#" onclick="buildDevices()" style="color: #fff;">Devices</a>
+            <a class="nav-link js-scroll-trigger" href="#devices" style="color: #fff;">Devices</a>
           </li>
           <li class="nav-item-active">
-            <a class="nav-link js-scroll-trigger" href="#" onclick="buildScreenshotList()" style="color: #fff;">Screenshots</a>
+            <a class="nav-link js-scroll-trigger" href="#screenshots" style="color: #fff;">Screenshots</a>
           </li>
         </ul>
       </div>
@@ -82,13 +82,8 @@
   <!-- Custom JavaScript for this theme -->
   <script src="/js/scrolling-nav.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/js/devices.js"></script>
-  <script src="/js/screenshots.js"></script>
-  <script src="/js/static-text.js"></script>
-  <script src="/js/blog.js"></script>
-  <script>
-    buildAbout();
-  </script>
+  <script type="module" src="/js/app.js"></script>
+
 </body>
 
 </html>
