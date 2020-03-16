@@ -1,4 +1,4 @@
-import { siteURL, container } from '../../js/const.js'
+import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var screenshotsList = []
 
@@ -26,7 +26,9 @@ class ScreenshotsView {
       var screenContainer = tempObject.querySelector('#screenshot-list')
 
       if (screenshotsList.length === 0) {
+        showSpinner(true);
         await this.buildScreenshotList();
+        showSpinner(false);
       }
 
       screenshotsList.forEach(screenshot => {

@@ -1,4 +1,4 @@
-import { siteURL, container } from '../../js/const.js'
+import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var postsList = []
 
@@ -46,7 +46,9 @@ class BlogView {
       var postsContainer = tempObject.querySelector('#post-list')
 
       if (postsList.length === 0) {
+        showSpinner(true);
         await this.buildBlogList();
+        showSpinner(false);
       }
 
       postsList.forEach(post => {

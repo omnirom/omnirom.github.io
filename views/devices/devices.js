@@ -1,4 +1,4 @@
-import { siteURL, container } from '../../js/const.js'
+import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var devicesList = []
 
@@ -48,6 +48,7 @@ class DevicesView {
       var devicesContainer = tempObject.querySelector('#device-list')
 
       if (devicesList.length === 0) {
+        showSpinner(true);
         let d = {};
         d['model'] = "All Devices";
         d['make'] = "All Manufactures";
@@ -56,6 +57,7 @@ class DevicesView {
         d['image'] = "/images/default_phone_omni.png";
         devicesList.push(d)
         await this.loadGithubRepos('android-10');
+        showSpinner(false);
       }
 
       devicesList.forEach(device => {
