@@ -1,5 +1,10 @@
+html, body {
+  height: 100%;
+}
 body {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
@@ -125,6 +130,23 @@ header .overlay {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.footer{
+  background:#a1c729;
+  color:white;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.footer-link {
+  color:white;
+}
+.footer-link:hover {
+  color: #00f;
 }
 
 @media (max-width: 750px){
