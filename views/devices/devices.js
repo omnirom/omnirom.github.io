@@ -16,14 +16,14 @@ class DevicesView {
 
       for (var repo in s) {
         let url = "https://raw.githubusercontent.com/omnirom/" + repo + "/android-10";
-        await this.loadDevice(url);
+        await this.loadDevice(url, repo);
       }
     } catch (error) {
       console.log("loadGithubRepos error");
     }
   }
 
-  async loadDevice(url) {
+  async loadDevice(url, repo) {
     try {
       let response = await axios
         .get(url + "/meta/config.json", {
@@ -31,6 +31,7 @@ class DevicesView {
       let device = await response.data;
       let d = device;
       d['image'] = url + "/" + device['image'];
+      d['changelog'] = "https://gerrit.omnirom.org/q/project:" + repo + "+status:merged"
       devicesList.push(d)
     } catch (error) {
       console.log("loadDevice error: " + url);
@@ -55,6 +56,7 @@ class DevicesView {
         d['state'] = "official";
         d['pageUrl'] = "https://dl.omnirom.org/";
         d['image'] = "/images/default_phone_omni.png";
+        d['changelog'] = "https://gerrit.omnirom.org/q/status:merged+android_device"
         devicesList.push(d)
         await this.loadGithubRepos('android-10');
         showSpinner(false);
@@ -68,6 +70,7 @@ class DevicesView {
               <h5 class="card-title">${device['model']}</h5>
               <p class="card-text">${device['make']}<br>${device['state']}</p>
               <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
+              <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
             </div>
           </div> `;
         devicesContainer.innerHTML += card
