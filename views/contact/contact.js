@@ -1,6 +1,6 @@
 import { siteURL, container } from '../../js/const.js'
 
-class AboutView {
+class ContactView {
 
   constructor() {
   }
@@ -17,4 +17,4 @@ class AboutView {
   }
 }
 
-export default AboutView = new AboutView();
+export default ContactView = new ContactView();
