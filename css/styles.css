@@ -98,17 +98,13 @@ header .overlay {
   color: #505050;
 }
 
-.post-text {
-  font-size: larger;
-}
-
 .post {
   margin: 10px;
 }
 
 .post-image {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   float: left !important;
 }
@@ -151,8 +147,8 @@ header .overlay {
 
 @media (max-width: 750px){
   .post-image {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     object-fit: cover;
     float: left !important;
   }

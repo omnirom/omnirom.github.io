@@ -60,7 +60,7 @@ class BlogView {
                 ${post['title']}
             </p>
           </div>
-          <p class="post-text">
+          <p>
             ${post['content']}
           </p>
           <p class="post-meta">Posted by ${post['writer']} on ${post['date']}</p>
