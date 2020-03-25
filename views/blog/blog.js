@@ -53,7 +53,7 @@ class BlogView {
 
       postsList.forEach(post => {
         const postItem = `
-        <div class="post">
+        <div class="col-lg-10 post">
           <div class="post-header" >
            <img src="${post['image']}" class="post-image vertical-center" />
             <p class="post-title vertical-center" >
