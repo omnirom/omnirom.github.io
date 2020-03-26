@@ -1,0 +1,7 @@
+{
+    "title": "Updated list of devices with prebuilt microG",
+    "content": "The actual list is oneplus7t, oneplus7tpro, def, raphael, oneplus6, oneplus6t. We also updated GmsCore and MozillaNlpBackend packages to include the additional background location permission.",
+    "writer": "maxwen",
+    "category": "microg",
+    "date": "2020-03-26"
+}
