@@ -3,5 +3,6 @@
     "content": "OnePlus released their chinese beta version of android 10. So we get blobs and vendor for OP5T Android-10. But there was trouble with AOSP bluetooth. I managed to fix the issues but there can be no official builds for now because of this.",
     "writer": "darkobas",
     "category": "Oneplus",
-    "date": "2020-03-26"
+    "date": "2020-03-26",
+    "image": "oneplus_logo.png"
 }
