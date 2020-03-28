@@ -1,5 +1,5 @@
 {
-    "title": "Safety net",
+    "title": "SafetyNet",
     "content": "So I had to a clean install after a long while and a nasty red not certified surprise awaited me upon fresh install. Seems the old bootloader userspace hack doesnt work anymore. Lucky we (I) can lock bootloader now and and all is good (green) again.",
     "writer": "darkobas",
     "category": "misc",
