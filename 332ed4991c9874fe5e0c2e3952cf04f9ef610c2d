@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15ead4fc_0f3f69af",
+        "filename": "blog/post-20200328.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1002555
+      },
+      "writtenOn": "2020-03-28T12:30:45Z",
+      "side": 1,
+      "message": "include*\npatches*",
+      "revId": "332ed4991c9874fe5e0c2e3952cf04f9ef610c2d",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55",
+      "unresolved": true
+    }
+  ]
+}
