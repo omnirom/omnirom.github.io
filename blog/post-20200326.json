@@ -1,8 +1,8 @@
 {
-    "title": "Oneplus5T unoffical from H2O's Beta",
-    "content": "OnePlus released their chinese beta version of android 10. So we get blobs and vendor for OP5T Android-10. But there was trouble with AOSP bluetooth. I managed to fix the issues but there can be no official builds for now because of this.",
+    "title": "OnePlus5T unofficial from H2O's Beta",
+    "content": "OnePlus released their Chinese beta version of Android 10, allowing us to to use the OnePlus 5T's Android 10 blobs and vendor. Due to an issue with AOSP Bluetooth (which I managed to fix), there can be no official builds for the forseen future",
     "writer": "darkobas",
-    "category": "Oneplus",
+    "category": "oneplus",
     "date": "2020-03-26",
     "image": "oneplus_logo.png"
 }
