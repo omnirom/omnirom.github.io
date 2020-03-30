@@ -258,3 +258,21 @@ header .overlay {
   }
 }
 
+a.nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #a1c729;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover:not(.active) {
+  color: #ddd;
+}
+

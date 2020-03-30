@@ -1,13 +1,18 @@
 import Router from './router.js'
 
+var navLinks = document.querySelectorAll(".nav-link");
 let currentRouter = Router.routes[window.location.hash];
 currentRouter.displayView();
 
-let navLinks = document.querySelectorAll(".nav-link");
+if (window.location.hash) {
+	manageActiveLink(window.location.hash)
+}
+
 navLinks.forEach(link => {
 	let destination = link.href
 	if (destination) {
 		link.onclick = function () {
+			manageActiveLink(destination)
 			let currentRouter = Router.routes[destination];
 			window.history.pushState(
 				{},
@@ -22,4 +27,13 @@ navLinks.forEach(link => {
 window.onpopstate = () => {
 	let currentRouter = Router.routes[window.location.hash];
 	currentRouter.displayView();
+}
+
+function manageActiveLink(hash) {
+	navLinks.forEach(lnk => {
+		lnk.classList.remove("active")
+		if (lnk.href.includes(hash)) {
+			lnk.classList.add("active")
+		}
+	})
 }
