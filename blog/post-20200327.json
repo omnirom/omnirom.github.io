@@ -1,6 +1,6 @@
 {
     "title": "SafetyNet",
-    "content": "So I had to a clean install after a long while and a nasty red not certified surprise awaited me upon fresh install. Seems the old bootloader userspace hack doesnt work anymore. Lucky we (I) can lock bootloader now and and all is good (green) again.",
+    "content": "So I had to a clean install after a long while and a nasty red not certified surprise awaited me upon fresh install. It seems the old bootloader userspace hack doesn't work anymore. Luckily we (I) can lock the bootloader now and all is good (green) again.",
     "writer": "darkobas",
     "category": "misc",
     "date": "2020-03-27"
