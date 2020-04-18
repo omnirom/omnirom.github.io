@@ -1,0 +1,7 @@
+{
+    "title": "Restructuring of repositories",
+    "content": "Those who are following our GitHub might have noticed that we did set some of our repositories to private. As described here in this <a href=\"https://github.com/omnirom/android/blob/android-10/README.md#private-repositories\">README.md</a> this is not about hiding our code. Everyone can request to get access to the source code by sending us an email with his GitHub account or if you do not want to share that can even get a zip file with the sources. According to the license terms you are then also free to re-share or make them public on your own if you want. Furthermore all changes to those repositories will still also be public on our Gerrit. Our main motivation for this is to gather knowledge who is using our code and to improve the communication and teamwork with other fellow developers and interested people. And it would be awesome if this leads to more developers contributing their changes and building together better things in the future.",
+    "writer": "maxwen",
+    "category": "misc",
+    "date": "2020-04-18"
+}
