@@ -3,5 +3,6 @@
     "content": "The following apps that are currently on the system or product image will be moved to the OmniStore and therefore you WILL LOOSE YOUR APP DATA on flashing the first update! Calculator, Calendar, Chromium, DeskClock, Gallery, Phonograph. One the various oneplus6/7 devices also OnePlus Camera and OnePlus Gallery. This is all the data that would be affected if you clear storage in the app settings or uninstall.",
     "writer": "maxwen",
     "category": "misc",
-    "date": "2020-06-16"
+    "date": "2020-06-16",
+    "image": "OmniStore.png"
 }

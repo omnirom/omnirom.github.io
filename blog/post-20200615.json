@@ -3,5 +3,6 @@
     "content": "Coming soon will be a change that is affecting everyone out there so please continue to read. We will move some apps out of the base image into what we call OmniStore. That basically means those apps will no longer be shipped as part of the system or product image but can be downloaded extra on demand.<br><br>The reason for that change are many and all of them are positive :) Advantages are e.g. smaller download size, faster builds, independent release of those apps from the base, providing updates to those apps over longer period of times and adding more flexibility for those that don't even want those apps or prefer an other app for that functionality. So you can see its a win-win-win for everyone :)<br><br>There is only one downside to it - you knew that this was coming right? :) - and that is that the settings for those apps will be lost in that move from being a system app to becoming a user app. There is no way for us to prevent that so you must take care of it if needed.<br><br>There will be a more detailed post coming next week with all the important details.",
     "writer": "maxwen",
     "category": "misc",
-    "date": "2020-06-15"
+    "date": "2020-06-15",
+    "image": "OmniStore.png"
 }
