@@ -1,0 +1,8 @@
+{
+    "title": "Oneplus 7T vendor blob update",
+    "content": "Vendor blobs have been updated from version 10.0.11. So it is save to update vendor and odm partition if you have not done that so far.",
+    "writer": "maxwen",
+    "category": "oneplus",
+    "date": "2020-07-01",
+    "image": "oneplus_logo.png"
+}
