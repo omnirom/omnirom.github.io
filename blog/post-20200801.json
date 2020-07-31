@@ -1,0 +1,8 @@
+{
+    "title": "Important Chromium changes",
+    "content": "Google, in their ultimate wisdom, has decided to change the packagename of Chromium. As of Chromium 84, the packagename has been extened to include the build type (stable, beta, ...). This change has impact on you as an OmniROM user. The OmniStore will show Chromium not being installed. This behaviour is correct as the packagename has changed. When you install the new Chromium version, you will notice two versions of Chromium being available. You will have to remove the old version manually as it will not be updated due to the packagename change.",
+    "writer": "scanno",
+    "category": "Chromium",
+    "image" : "chromium.png",
+    "date": "2020-08-01"
+}
