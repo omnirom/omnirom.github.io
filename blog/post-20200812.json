@@ -1,0 +1,8 @@
+{
+    "title": "Raspberry Pi 4 comes to OmniROM",
+    "content": "For current progress and how to build yourself check <a href=\"https://github.com/maxwen/android_device_brcm_rpi4/blob/android-10/README\">README</a>. During the next days the repositories will be transferred to our github and gerrit. First beta downloads can be found here <a href=\"https://dl.omnirom.org/tmp/rpi4/\">rpi4</a>. But first make sure to read this <a href=\"https://dl.omnirom.org/tmp/rpi4/README.txt\">README</a> for some important details. Support will be given in our official Telegram channel.",
+    "writer": "maxwen",
+    "category": "Raspberry",
+    "image" : "raspi.png",
+    "date": "2020-08-12"
+}
