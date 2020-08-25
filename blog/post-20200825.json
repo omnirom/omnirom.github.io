@@ -1,0 +1,8 @@
+{
+    "title": "Oneplus8Pro gets unofficial OmniROM",
+    "content": "Darkobas is providing unofficial OmniROM builds for the OnePlus8Pro flagship. It is also first of OmniROM releases with enabled verity and lockable bootloader. Unfortunately it is also the only supported way of flashing OmniROM on this device. Reason for this comes from darkobas addiction to passing safety net and an issue with the devices persist partition regarding fingerprint reader. So be vary to foollow install instructions. With verity enabled and gapps included (yes, only gapps release so far) delta updates will also be available later. Most likely you will have questions so don't forget to visit out official Telegram channel. Downloads can be found here <a href=\"https://drive.google.com/drive/u/0/folders/160Pt7Kp9H_psogz1Na15z1PQGTQJc8QL\">GDrive</a>.",
+    "writer": "darkobas",
+    "category": "OnePlus8Pro",
+    "image" : "op8pro.png",
+    "date": "2020-08-25"
+}
