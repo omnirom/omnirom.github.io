@@ -7,19 +7,12 @@ class BlogView {
   async buildBlogList() {
 
     let response = await axios.get("https://api.github.com/repos/omnirom/omnirom.github.io/contents/blog")
-    let files = response.data.reverse();
-    for (var i = 0; i < files.length; i++) {
-      await this.loadBlogPost(files[i]['download_url'])
-    }
-  }
+    let files = response.data.reverse().filter(item => item.download_url.includes('.json'));
 
-  async loadBlogPost(url) {
-    try {
-      let response = await axios.get(url);
-      await this.addBlogPost(response.data, url);
-    } catch (error) {
-      console.log("loadBlogPost error: " + url);
-    }
+    var requests = files.map(file => axios.get(file['download_url']));
+    await Promise.all(requests).then(results => {
+      results.forEach(result => this.addBlogPost(result.data, result.config.url))
+    });
   }
 
   async addBlogPost(post, url) {
