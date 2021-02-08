@@ -28,11 +28,22 @@ class DevicesView {
     await Promise.allSettled(requests).then(results => {
       results.forEach(result => {
         if (result.value) {
-          let d = result.value.data;
-          let url = result.value.config.url
-          d['image'] = url.split("meta/")[0] + "/" + d['image'];
-          d['changelog'] = gerritURL +"/q/project:" + url.split("/")[4] + "+status:merged"
-          devicesList.push(d)
+          if (Array.isArray(result.value.data)) {
+            result.value.data.forEach(device => {
+              let d = device;
+              let url = result.value.config.url
+              d['image'] = url.split("meta/")[0] + "/" + d['image'];
+              d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
+              devicesList.push(d)
+            })
+
+          } else {
+            let d = result.value.data;
+            let url = result.value.config.url
+            d['image'] = url.split("meta/")[0] + "/" + d['image'];
+            d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
+            devicesList.push(d)
+          }
         }
       })
       showSpinner(false);
