@@ -1,0 +1,24 @@
+[{
+    "model": "motorola one 1",
+    "pageUrl":"https://dl.omnirom.org/tmp/def",
+    "make": "Motorola",
+    "image": "meta/def.jpg",
+    "state": "unofficial",
+    "device": "def"
+},
+{
+    "model": "motorola one 2",
+    "pageUrl":"https://dl.omnirom.org/tmp/def",
+    "make": "Motorola",
+    "image": "meta/def.jpg",
+    "state": "unofficial",
+    "device": "def"
+},
+{
+    "model": "motorola one 3",
+    "pageUrl":"https://dl.omnirom.org/tmp/def",
+    "make": "Motorola",
+    "image": "meta/def.jpg",
+    "state": "unofficial",
+    "device": "def"
+}]
