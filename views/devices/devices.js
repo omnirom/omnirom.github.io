@@ -3,13 +3,14 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
+var currentVersion = 'android-11'
 
 class DevicesView {
 
-  async loadGithubRepos(branch) {
+  async loadGithubRepos() {
     try {
       let response = await axios
-        .get(gerritURL + "/projects/?b=" + branch + "&p=android_device", {
+        .get(gerritURL + "/projects/?b=" + currentVersion + "&p=android_device", {
         });
 
       let magic = ")]}'";
@@ -24,7 +25,7 @@ class DevicesView {
   }
 
   async loadDevice(devices) {
-    var requests = Object.keys(devices).map(repo => axios.get(rawURL + repo + "/android-10/meta/config.json"));
+    var requests = Object.keys(devices).map(repo => axios.get(rawURL + repo + "/" + currentVersion + "/meta/config.json"));
     await Promise.allSettled(requests).then(results => {
       results.forEach(result => {
         if (result.value) {
@@ -61,8 +62,8 @@ class DevicesView {
 
     devicesList.forEach(device => {
       const card = `
-      <div class="card device-card" style="width: 18rem;">
-          <img src="${device['image']}" class="card-img-top" width="250" alt="${device['model']}" >
+      <div class="card device-card col-lg-3">
+          <img src="${device['image']}" class="card-img-top" alt="${device['model']}" >
           <div class="card-body">
             <h5 class="card-title">${device['model']}</h5>
             <p class="card-text">${device['make']}<br>${device['state']}</p>
@@ -76,23 +77,26 @@ class DevicesView {
     container.innerHTML = tempObject.innerHTML
   }
 
-  async displayView() {
+  async displayView(hash) {
     try {
-      if (devicesList.length === 0) {
-        showSpinner(true);
-        let d = {};
-        d['model'] = "All Devices";
-        d['make'] = "All Manufactures";
-        d['state'] = "official";
-        d['pageUrl'] = "https://dl.omnirom.org/";
-        d['image'] = "/images/default_phone_omni.png";
-        d['changelog'] = gerritURL + "/q/status:merged+android_device"
-        devicesList.push(d)
-        await this.loadGithubRepos('android-10');
-      } else {
-        this.showDevices()
+      if (hash) {
+        let androidVersion = hash.split("/")[1]
+        if (androidVersion !== currentVersion) {
+          currentVersion = androidVersion
+        }
       }
 
+      devicesList = []
+      showSpinner(true);
+      let d = {};
+      d['model'] = "All Devices";
+      d['make'] = "All Manufactures";
+      d['state'] = "official";
+      d['pageUrl'] = "https://dl.omnirom.org/";
+      d['image'] = "/images/default_phone_omni.png";
+      d['changelog'] = gerritURL + "/q/status:merged+android_device"
+      devicesList.push(d)
+      await this.loadGithubRepos();
     } catch (error) {
       console.log("display device view error: " + error);
     }
