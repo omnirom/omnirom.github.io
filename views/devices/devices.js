@@ -3,7 +3,7 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
-var currentVersion = 'android-11'
+var currentVersion = 'android-12.0'
 
 class DevicesView {
 
