@@ -3,7 +3,7 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
-var currentVersion = 'android-11'
+var currentVersion = 'android-12.0'
 
 class DevicesView {
 
@@ -74,7 +74,8 @@ class DevicesView {
       devicesContainer.innerHTML += card
     })
 
-    let activeButton = tempObject.querySelector('#' + currentVersion)
+    let version = currentVersion.replace(/\./g, "_")
+    let activeButton = tempObject.querySelector('#' + version)
     activeButton.classList.add("btn-dark");
 
     container.innerHTML = tempObject.innerHTML
@@ -84,6 +85,7 @@ class DevicesView {
     try {
       if (hash) {
         let androidVersion = hash.split("/")[1]
+        androidVersion = androidVersion.replace(/_/g, ".")
         if (androidVersion !== currentVersion) {
           currentVersion = androidVersion
         }
