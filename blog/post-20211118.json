@@ -1,0 +1,8 @@
+{
+    "title": "Raspberry Pi 4 gets first Android S (12) builds",
+    "content": "For current progress and how to build yourself check <a href=\"https://github.com/maxwen/android_device_brcm_rpi4/blob/android-12.0/README\">README</a>. As usual downloads can be found here <a href=\"https://dl.omnirom.org/tmp/rpi4/\">rpi4</a>. But first make sure to read this <a href=\"https://dl.omnirom.org/tmp/rpi4/README.txt\">README</a> for some important details. Support will be given in our official Telegram channel.",
+    "writer": "maxwen",
+    "category": "Raspberry",
+    "image" : "raspi.png",
+    "date": "2021-11-18"
+}
