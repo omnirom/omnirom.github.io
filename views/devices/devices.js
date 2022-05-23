@@ -61,8 +61,25 @@ class DevicesView {
     var devicesContainer = tempObject.querySelector('#device-list')
 
     devicesList.forEach(device => {
-      const card = `
-      <div class="card device-card col-lg-3 col-md-4 col-sm-5">
+      if (device['readme']) {
+        const card = `
+        <div class="card device-card col-lg-3 col-md-4 col-sm-5">
+          <img src="${device['image']}" class="card-img-top" alt="${device['model']}" >
+          <div class="card-body">
+            <h5 class="card-title">${device['model']}</h5>
+            <p class="card-text">
+              ${device['make']}<br>
+              ${device['state']}
+              <a href="${device['readme']}" target="_blank" class="btn btn-omni">Readme</a>
+            </p>
+            <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
+            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
+          </div>
+        </div> `;
+        devicesContainer.innerHTML += card
+      } else {
+        const card = `
+        <div class="card device-card col-lg-3 col-md-4 col-sm-5">
           <img src="${device['image']}" class="card-img-top" alt="${device['model']}" >
           <div class="card-body">
             <h5 class="card-title">${device['model']}</h5>
@@ -71,7 +88,8 @@ class DevicesView {
             <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
-      devicesContainer.innerHTML += card
+        devicesContainer.innerHTML += card
+      }
     })
 
     let version = currentVersion.replace(/\./g, "_")

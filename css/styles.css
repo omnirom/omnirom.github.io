@@ -93,6 +93,43 @@ header .overlay {
   border-color: #a1c729;
 }
 
+.btn-omni-rounded {
+  font-size: 13px;
+  color: #a1c729;
+  letter-spacing: 1px;
+  line-height: 20px;
+  border: 1px solid #a1c729;
+  border-radius: 40px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-omni-rounded:hover {
+  color: #FFF;
+  background: #a1c729;
+}
+
+.btn-omni-rounded:focus, .btn-omni-rounded.focus {
+  color: #FFF;
+  background: #a1c729;
+}
+
+.btn-omni-rounded.disabled, .btn-omni-rounded:disabled {
+  color: #212529;
+  background: #212529;
+}
+
+.btn-omni-rounded:not(:disabled):not(.disabled):active, .btn-omni-rounded:not(:disabled):not(.disabled).active,
+.show > .btn-omni-rounded.dropdown-toggle {
+  color: #FFF;
+  background: #a1c729;
+}
+
+.btn-omni-rounded:not(:disabled):not(.disabled):active:focus, .btn-omni-rounded:not(:disabled):not(.disabled).active:focus,
+.show > .btn-omni-rounded.dropdown-toggle:focus {
+  color: #FFF;
+  background: #a1c729;
+}
+
 .post-meta {
   font-style: italic;
   color: #505050;
