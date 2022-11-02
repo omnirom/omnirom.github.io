@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2b8c5e3_9a9d093d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002322
+      },
+      "writtenOn": "2022-11-02T21:39:29Z",
+      "side": 1,
+      "message": "no rush ofc, just need to be merged when we\u0027re ready 😎",
+      "revId": "4bbc354af830c96d7332c12875c082b99f34fdfd",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55"
+    }
+  ]
+}
