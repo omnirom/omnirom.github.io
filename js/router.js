@@ -4,6 +4,7 @@ import devicesView from '../views/devices/devices.js'
 import screenshotsView from '../views/screenshots/screenshots.js'
 import blogView from '../views/blog/blog.js'
 import donationView from '../views/donation/donation.js'
+import supportersView from '../views/supporters/supporters.js'
 
 class Router {
   get routes() {
@@ -15,6 +16,7 @@ class Router {
       '#screenshots': screenshotsView,
       '#blog' : blogView,
       '#donation': donationView,
+      '#supporters' : supportersView,
     };
   };
 }
