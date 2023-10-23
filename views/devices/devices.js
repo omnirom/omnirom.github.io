@@ -73,7 +73,6 @@ class DevicesView {
               <a href="${device['readme']}" target="_blank" class="btn btn-omni">Readme</a>
             </p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -85,7 +84,6 @@ class DevicesView {
             <h5 class="card-title">${device['model']}</h5>
             <p class="card-text">${device['make']}<br>${device['state']}</p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -110,16 +108,14 @@ class DevicesView {
       }
 
       devicesList = []
-      showSpinner(true);
       let d = {};
       d['model'] = "All Devices";
       d['make'] = "All Manufactures";
       d['state'] = "official";
       d['pageUrl'] = "https://dl.omnirom.org/";
       d['image'] = "/images/default_phone_omni.png";
-      d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
-      await this.loadGithubRepos();
+      await this.showDevices();
     } catch (error) {
       console.log("display device view error: " + error);
     }
