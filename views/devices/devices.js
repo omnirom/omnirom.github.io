@@ -3,16 +3,14 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
-var currentVersion = 'android-13.0'
+var currentVersion = 'android-14.0'
 
 class DevicesView {
 
   async loadGithubRepos() {
     try {
-      let response = await axios
-        .get(gerritURL + "/projects/?b=" + currentVersion + "&p=android_device", {
-        });
-
+      let url = gerritURL + "/projects/?b=" + currentVersion + "&p=android_device";
+      let response = await axios.get(url, {});
       let magic = ")]}'";
       let repos = response.data.substring(magic.length);
       let s = await JSON.parse(repos);
@@ -20,7 +18,7 @@ class DevicesView {
       this.loadDevice(s);
 
     } catch (error) {
-      console.log("loadGithubRepos error");
+      console.log("loadGithubRepos error " + error);
     }
   }
 
@@ -73,6 +71,7 @@ class DevicesView {
               <a href="${device['readme']}" target="_blank" class="btn btn-omni">Readme</a>
             </p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
+            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -84,6 +83,7 @@ class DevicesView {
             <h5 class="card-title">${device['model']}</h5>
             <p class="card-text">${device['make']}<br>${device['state']}</p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
+            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -108,14 +108,16 @@ class DevicesView {
       }
 
       devicesList = []
+      showSpinner(true);
       let d = {};
       d['model'] = "All Devices";
       d['make'] = "All Manufactures";
       d['state'] = "official";
       d['pageUrl'] = "https://dl.omnirom.org/";
       d['image'] = "/images/default_phone_omni.png";
+      d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
-      await this.showDevices();
+      await this.loadGithubRepos();
     } catch (error) {
       console.log("display device view error: " + error);
     }
