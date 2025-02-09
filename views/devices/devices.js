@@ -3,7 +3,12 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
-var currentVersion = 'android-14.0'
+var currentVersion = 'android-15'
+var branchMapping = {
+  'android-13_0': 'android-13.0',
+  'android-14_0': 'android-14.0',
+  'android-15_0': 'android-15'
+}
 
 class DevicesView {
 
@@ -90,9 +95,14 @@ class DevicesView {
       }
     })
 
-    let version = currentVersion.replace(/\./g, "_")
-    let activeButton = tempObject.querySelector('#' + version)
-    activeButton.classList.add("btn-dark");
+    for(var version in branchMapping) {
+      var branch = branchMapping[version];
+      if (branch === currentVersion) {
+        let activeButton = tempObject.querySelector('#' + version)
+        activeButton.classList.add("btn-dark");
+        break
+      }
+    }
 
     container.innerHTML = tempObject.innerHTML
   }
@@ -100,8 +110,8 @@ class DevicesView {
   async displayView(hash) {
     try {
       if (hash) {
-        let androidVersion = hash.split("/")[1]
-        androidVersion = androidVersion.replace(/_/g, ".")
+        let androidVersionId = hash.split("/")[1]
+        let androidVersion = branchMapping[androidVersionId]
         if (androidVersion !== currentVersion) {
           currentVersion = androidVersion
         }
