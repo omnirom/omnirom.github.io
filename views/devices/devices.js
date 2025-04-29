@@ -95,7 +95,7 @@ class DevicesView {
       }
     })
 
-    for(var version in branchMapping) {
+    for (var version in branchMapping) {
       var branch = branchMapping[version];
       if (branch === currentVersion) {
         let activeButton = tempObject.querySelector('#' + version)

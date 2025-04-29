@@ -14,9 +14,9 @@ class Router {
       '#contact': contactView,
       '#devices': devicesView,
       '#screenshots': screenshotsView,
-      '#blog' : blogView,
+      '#blog': blogView,
       '#donation': donationView,
-      '#supporters' : supportersView,
+      '#supporters': supportersView,
     };
   };
 }

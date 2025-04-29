@@ -1,6 +1,8 @@
-html, body {
+html,
+body {
   height: 100%;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -32,7 +34,7 @@ header video {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-  
+
 header .overlay {
   position: absolute;
   top: 0;
@@ -86,8 +88,9 @@ header .overlay {
   box-shadow: 0 0 0 0.2rem #a1c729(0, 123, 255, 0.25);
 }
 
-.btn-omni:not(:disabled):not(.disabled):active, .btn-omni:not(:disabled):not(.disabled).active,
-.show > .btn-omni.dropdown-toggle {
+.btn-omni:not(:disabled):not(.disabled):active,
+.btn-omni:not(:disabled):not(.disabled).active,
+.show>.btn-omni.dropdown-toggle {
   color: #fff;
   background-color: #a1c729;
   border-color: #a1c729;
@@ -108,24 +111,28 @@ header .overlay {
   background: #a1c729;
 }
 
-.btn-omni-rounded:focus, .btn-omni-rounded.focus {
+.btn-omni-rounded:focus,
+.btn-omni-rounded.focus {
   color: #FFF;
   background: #a1c729;
 }
 
-.btn-omni-rounded.disabled, .btn-omni-rounded:disabled {
+.btn-omni-rounded.disabled,
+.btn-omni-rounded:disabled {
   color: #212529;
   background: #212529;
 }
 
-.btn-omni-rounded:not(:disabled):not(.disabled):active, .btn-omni-rounded:not(:disabled):not(.disabled).active,
-.show > .btn-omni-rounded.dropdown-toggle {
+.btn-omni-rounded:not(:disabled):not(.disabled):active,
+.btn-omni-rounded:not(:disabled):not(.disabled).active,
+.show>.btn-omni-rounded.dropdown-toggle {
   color: #FFF;
   background: #a1c729;
 }
 
-.btn-omni-rounded:not(:disabled):not(.disabled):active:focus, .btn-omni-rounded:not(:disabled):not(.disabled).active:focus,
-.show > .btn-omni-rounded.dropdown-toggle:focus {
+.btn-omni-rounded:not(:disabled):not(.disabled):active:focus,
+.btn-omni-rounded:not(:disabled):not(.disabled).active:focus,
+.show>.btn-omni-rounded.dropdown-toggle:focus {
   color: #FFF;
   background: #a1c729;
 }
@@ -165,9 +172,9 @@ header .overlay {
   transform: translateY(-50%);
 }
 
-.footer{
-  background:#a1c729;
-  color:white;
+.footer {
+  background: #a1c729;
+  color: white;
   flex-shrink: 0;
 }
 
@@ -176,13 +183,14 @@ header .overlay {
 }
 
 .footer-link {
-  color:white;
+  color: white;
 }
+
 .footer-link:hover {
   color: #00f;
 }
 
-@media (max-width: 750px){
+@media (max-width: 750px) {
   .post-image {
     width: 48px;
     height: 48px;
@@ -238,6 +246,7 @@ header .overlay {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -246,6 +255,7 @@ header .overlay {
     transform: rotate(360deg);
   }
 }
+
 @-moz-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -254,6 +264,7 @@ header .overlay {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -262,6 +273,7 @@ header .overlay {
     transform: rotate(360deg);
   }
 }
+
 @-o-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -270,6 +282,7 @@ header .overlay {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -278,6 +291,7 @@ header .overlay {
     transform: rotate(360deg);
   }
 }
+
 @keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -286,6 +300,7 @@ header .overlay {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -312,4 +327,3 @@ a.nav-link {
 .navbar-light .navbar-nav .nav-link:hover:not(.active) {
   color: #ddd;
 }
-
