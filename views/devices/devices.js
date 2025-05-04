@@ -2,6 +2,7 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
+const githubAPIURL = 'https://api.github.com'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
 var currentVersion = 'android-15'
 var branchMapping = {
@@ -12,7 +13,7 @@ var branchMapping = {
 
 class DevicesView {
 
-  async loadGithubRepos() {
+  async loadGithubReposFromGerrit() {
     try {
       let url = gerritURL + "/projects/?b=" + currentVersion + "&p=android_device";
       let response = await axios.get(url, {});
@@ -27,6 +28,24 @@ class DevicesView {
     }
   }
 
+  async loadGithubReposFromGithub() {
+    try {
+      // TODO filter for branch
+      let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom";
+      let response = await axios.get(url, {});
+      let repos = response.data;
+      let s = await JSON.parse(repos);
+      var repo_dict = {};
+      for (val r in s) {
+        repo_dict.set(r["name"], 1)
+      }
+      console.log("loadGithubReposFromGithub repo_dict " + repo_dict);
+      this.loadDevice(repo_dict);
+
+    } catch (error) {
+      console.log("loadGithubRepos error " + error);
+    }
+  }
   async loadDevice(devices) {
     var requests = Object.keys(devices).map(repo => axios.get(rawURL + repo + "/" + currentVersion + "/meta/config.json"));
     await Promise.allSettled(requests).then(results => {
