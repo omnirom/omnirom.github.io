@@ -146,7 +146,7 @@ class DevicesView {
       d['image'] = "/images/default_phone_omni.png";
       d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
-      await this.loadGithubRepos();
+      await this.loadGithubReposFromGithub();
     } catch (error) {
       console.log("display device view error: " + error);
     }
