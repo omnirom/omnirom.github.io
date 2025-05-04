@@ -35,6 +35,7 @@ class DevicesView {
       let response = await axios.get(url, {});
       let repos = response.data;
       let s = await JSON.parse(repos);
+      console.log(s["items"])
       var repo_dict = {};
       for (var r in s["items"]) {
         repo_dict.set(r["name"], 1)
