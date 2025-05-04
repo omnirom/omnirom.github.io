@@ -38,7 +38,7 @@ class DevicesView {
       console.log(s["items"])
       var repo_dict = {};
       for (var r in s["items"]) {
-        repo_dict.set(r["name"], 1)
+        repo_dict[r["name"]] = 1;
       }
       console.log("loadGithubReposFromGithub repo_dict " + repo_dict);
       this.loadDevice(repo_dict);
