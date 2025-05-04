@@ -34,9 +34,7 @@ class DevicesView {
       let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom";
       console.log(url);
       let response = await axios.get(url, {});
-      let repos = response.data;
-      console.log(repos);
-      let s = await JSON.parse(repos);
+      let s = response.data;
       console.log(s["items"])
       var repo_dict = {};
       for (var r in s["items"]) {
