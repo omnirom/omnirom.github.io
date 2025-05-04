@@ -61,7 +61,6 @@ class DevicesView {
         }
       }
 
-      console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
       this.loadDevice(repo_dict);
 
     } catch (error) {
