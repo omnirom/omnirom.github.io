@@ -35,7 +35,7 @@ class DevicesView {
       let response = await axios.get(url, {});
       let s = response.data;
       var repo_dict = {};
-      for (const [key, value] of Object.entries(s["items"]))
+      for (const [key, value] of Object.entries(s["items"])){
         console.log(`${key}: ${value}`);
         console.log(value["name"]);
         repo_dict[r["name"]] = 1;
