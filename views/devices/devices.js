@@ -32,15 +32,15 @@ class DevicesView {
     try {
       // TODO filter for branch
       let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom";
-      console.log(url);
       let response = await axios.get(url, {});
       let s = response.data;
-      console.log(s["items"])
       var repo_dict = {};
       for (var r in s["items"]) {
+        console.log(r);
+        console.log(r["name"]);
         repo_dict[r["name"]] = 1;
       }
-      console.log("loadGithubReposFromGithub repo_dict " + repo_dict);
+      console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
       this.loadDevice(repo_dict);
 
     } catch (error) {
