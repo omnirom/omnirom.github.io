@@ -46,17 +46,17 @@ class DevicesView {
         let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page="+per_page+"&page="+page;
         let response = await axios.get(url, {});
         let s = response.data;
-        if Object.keys(s["items"]).length == 0 {
+        if (Object.keys(s["items"]).length == 0) {
           break
         }
         let total_count = s["total_count"];
         for (const [key, value] of Object.entries(s["items"])){
           repo_dict[value["name"]] = 1;
-          if Object.keys(repo_dict).length == total_count {
+          if (Object.keys(repo_dict).length == total_count) {
             break;
           }
         }
-        if Object.keys(repo_dict).length == total_count {
+        if (Object.keys(repo_dict).length == total_count) {
           break;
         }
       }
