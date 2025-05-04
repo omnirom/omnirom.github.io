@@ -36,7 +36,7 @@ class DevicesView {
       let repos = response.data;
       let s = await JSON.parse(repos);
       var repo_dict = {};
-      for (var r in s) {
+      for (var r in s["items"]) {
         repo_dict.set(r["name"], 1)
       }
       console.log("loadGithubReposFromGithub repo_dict " + repo_dict);
