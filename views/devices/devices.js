@@ -35,11 +35,9 @@ class DevicesView {
       let response = await axios.get(url, {});
       let s = response.data;
       var repo_dict = {};
-      console.log(Object.keys(s["items"]));
-      console.log(Object.values(s["items"]));
-      for (var r in Object.values(s["items"])) {
-        console.log(r);
-        console.log(r["name"]);
+      for (const [key, value] of Object.entries(s["items"]))
+        console.log(`${key}: ${value}`);
+        console.log(value["name"]);
         repo_dict[r["name"]] = 1;
       }
       console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
