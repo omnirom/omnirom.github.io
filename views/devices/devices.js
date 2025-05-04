@@ -38,14 +38,29 @@ class DevicesView {
 
   async loadGithubReposFromGithub() {
     try {
+      var repo_dict = {};
+      let total_pages = 10;
+      let per_page = 50;
       // TODO filter for branch
-      //let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page=100";
-      //let response = await axios.get(url, {});
-      //let s = response.data;
-      //var repo_dict = {};
-      //for (const [key, value] of Object.entries(s["items"])){
-      //  repo_dict[value["name"]] = 1;
-      //}
+      for (let page = 0; i < total_pages; page++) {
+        let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page="+per_page+"&page="+page;
+        let response = await axios.get(url, {});
+        let s = response.data;
+        if Object.keys(s["items"]).length == 0 {
+          break
+        }
+        let total_count = s["total_count"];
+        for (const [key, value] of Object.entries(s["items"])){
+          repo_dict[value["name"]] = 1;
+          if Object.keys(repo_dict).length == total_count {
+            break;
+          }
+        }
+        if Object.keys(repo_dict).length == total_count {
+          break;
+        }
+      }
+
       console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
       this.loadDevice(repo_dict);
 
