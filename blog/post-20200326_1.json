@@ -3,6 +3,6 @@
     "content": "The actual list is oneplus7t, oneplus7tpro, def, raphael, oneplus6, oneplus6t. We also updated GmsCore and MozillaNlpBackend packages to include the additional background location permission. Due to that change it might be needed to clean flash the next build because new apks build from us will have a different signature then the current ones. So if you face any issues with e.g. network location backend you need to do that.",
     "writer": "maxwen",
     "category": "microg",
-    "image" : "microg_logo.png",
+    "image": "microg_logo.png",
     "date": "2020-03-26"
 }
