@@ -38,7 +38,7 @@ class DevicesView {
       for (const [key, value] of Object.entries(s["items"])){
         console.log(`${key}: ${value}`);
         console.log(value["name"]);
-        repo_dict[r["name"]] = 1;
+        repo_dict[value["name"]] = 1;
       }
       console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
       this.loadDevice(repo_dict);
