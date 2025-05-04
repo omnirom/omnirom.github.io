@@ -2,6 +2,7 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
+const githubAPIURL = 'https://api.github.com'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
 var currentVersion = 'android-15'
 var branchMapping = {
@@ -9,10 +10,18 @@ var branchMapping = {
   'android-14_0': 'android-14.0',
   'android-15_0': 'android-15'
 }
+// temporary
+var repo_dict = {
+  "android_device_google_raven" : 1,
+  "android_device_google_oriole" : 1,
+  "android_device_asus_zenfone7" : 1,
+  "android_device_asus_zenfone8" : 1,
+  "android_device_asus_zenfone9" : 1,
+}
 
 class DevicesView {
 
-  async loadGithubRepos() {
+  async loadGithubReposFromGerrit() {
     try {
       let url = gerritURL + "/projects/?b=" + currentVersion + "&p=android_device";
       let response = await axios.get(url, {});
@@ -27,6 +36,23 @@ class DevicesView {
     }
   }
 
+  async loadGithubReposFromGithub() {
+    try {
+      // TODO filter for branch
+      //let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page=100";
+      //let response = await axios.get(url, {});
+      //let s = response.data;
+      //var repo_dict = {};
+      //for (const [key, value] of Object.entries(s["items"])){
+      //  repo_dict[value["name"]] = 1;
+      //}
+      console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
+      this.loadDevice(repo_dict);
+
+    } catch (error) {
+      console.log("loadGithubRepos error " + error);
+    }
+  }
   async loadDevice(devices) {
     var requests = Object.keys(devices).map(repo => axios.get(rawURL + repo + "/" + currentVersion + "/meta/config.json"));
     await Promise.allSettled(requests).then(results => {
@@ -127,7 +153,7 @@ class DevicesView {
       d['image'] = "/images/default_phone_omni.png";
       d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
-      await this.loadGithubRepos();
+      await this.loadGithubReposFromGithub();
     } catch (error) {
       console.log("display device view error: " + error);
     }
