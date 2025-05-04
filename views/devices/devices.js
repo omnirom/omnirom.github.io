@@ -43,7 +43,7 @@ class DevicesView {
       let per_page = 50;
       // TODO filter for branch
       for (let page = 0; page < total_pages; page++) {
-        let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom:omnirom+pushed:>2022-01-01&per_page="+per_page+"&page="+page;
+        let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom+pushed:>2022-01-01&per_page="+per_page+"&page="+page;
         let response = await axios.get(url, {});
         let s = response.data;
         if (Object.keys(s["items"]).length == 0) {
