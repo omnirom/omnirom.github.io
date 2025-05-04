@@ -11,7 +11,7 @@ var branchMapping = {
   'android-15_0': 'android-15'
 }
 // temporary
-repo_dict = {
+var repo_dict = {
   "android_device_google_raven" : 1,
   "android_device_google_oriole" : 1,
   "android_device_asus_zenfone7" : 1,
