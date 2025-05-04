@@ -31,13 +31,11 @@ class DevicesView {
   async loadGithubReposFromGithub() {
     try {
       // TODO filter for branch
-      let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom";
+      let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page=100";
       let response = await axios.get(url, {});
       let s = response.data;
       var repo_dict = {};
       for (const [key, value] of Object.entries(s["items"])){
-        console.log(`${key}: ${value}`);
-        console.log(value["name"]);
         repo_dict[value["name"]] = 1;
       }
       console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
