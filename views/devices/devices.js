@@ -10,6 +10,14 @@ var branchMapping = {
   'android-14_0': 'android-14.0',
   'android-15_0': 'android-15'
 }
+// temporary
+repo_dict = {
+  "android_device_google_raven" : 1,
+  "android_device_google_oriole" : 1,
+  "android_device_asus_zenfone7" : 1,
+  "android_device_asus_zenfone8" : 1,
+  "android_device_asus_zenfone9" : 1,
+}
 
 class DevicesView {
 
@@ -31,13 +39,13 @@ class DevicesView {
   async loadGithubReposFromGithub() {
     try {
       // TODO filter for branch
-      let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page=100";
-      let response = await axios.get(url, {});
-      let s = response.data;
-      var repo_dict = {};
-      for (const [key, value] of Object.entries(s["items"])){
-        repo_dict[value["name"]] = 1;
-      }
+      //let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom&per_page=100";
+      //let response = await axios.get(url, {});
+      //let s = response.data;
+      //var repo_dict = {};
+      //for (const [key, value] of Object.entries(s["items"])){
+      //  repo_dict[value["name"]] = 1;
+      //}
       console.log("loadGithubReposFromGithub repo_dict " + Object.keys(repo_dict));
       this.loadDevice(repo_dict);
 
