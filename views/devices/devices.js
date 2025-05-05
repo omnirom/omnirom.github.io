@@ -75,7 +75,7 @@ class DevicesView {
               let d = device;
               let url = result.value.config.url
               d['image'] = url.split("meta/")[0] + "/" + d['image'];
-              d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
+              //d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
               devicesList.push(d)
             })
 
@@ -83,7 +83,7 @@ class DevicesView {
             let d = result.value.data;
             let url = result.value.config.url
             d['image'] = url.split("meta/")[0] + "/" + d['image'];
-            d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
+            //d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
             devicesList.push(d)
           }
         }
@@ -114,7 +114,7 @@ class DevicesView {
               <a href="${device['readme']}" target="_blank" class="btn btn-omni">Readme</a>
             </p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
+            <!-<a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>-->
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -126,7 +126,7 @@ class DevicesView {
             <h5 class="card-title">${device['model']}</h5>
             <p class="card-text">${device['make']}<br>${device['state']}</p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
+            <!--<a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>-->
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -163,7 +163,7 @@ class DevicesView {
       d['state'] = "official";
       d['pageUrl'] = "https://dl.omnirom.org/";
       d['image'] = "/images/default_phone_omni.png";
-      d['changelog'] = gerritURL + "/q/status:merged+android_device"
+      //d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
       await this.loadGithubReposFromGithub();
     } catch (error) {
