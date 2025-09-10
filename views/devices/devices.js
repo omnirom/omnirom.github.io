@@ -6,7 +6,8 @@ const githubAPIURL = 'https://api.github.com'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
 var currentVersion = 'android-15'
 var branchMapping = {
-  'android-15_0': 'android-15'
+  'android-15_0': 'android-15',
+   'android-16_0': 'android-16'
 }
 // temporary
 var repo_dict = {
