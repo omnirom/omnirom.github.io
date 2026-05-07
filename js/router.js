@@ -5,11 +5,12 @@ import screenshotsView from '../views/screenshots/screenshots.js'
 import blogView from '../views/blog/blog.js'
 import donationView from '../views/donation/donation.js'
 import supportersView from '../views/supporters/supporters.js'
+import closedView from '../views/closed/closed.js'
 
 class Router {
   get routes() {
     return {
-      '': aboutView,
+      '': closedView,
       '#about': aboutView,
       '#contact': contactView,
       '#devices': devicesView,
@@ -17,6 +18,7 @@ class Router {
       '#blog' : blogView,
       '#donation': donationView,
       '#supporters' : supportersView,
+      '#closed': closedView,
     };
   };
 }
