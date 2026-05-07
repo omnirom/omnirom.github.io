@@ -2,17 +2,25 @@ import { siteURL, container, showSpinner } from '../../js/const.js'
 
 var devicesList = []
 const gerritURL = 'https://gerrit.omnirom.org'
+const githubAPIURL = 'https://api.github.com'
 const rawURL = 'https://raw.githubusercontent.com/omnirom/'
 var currentVersion = 'android-15'
 var branchMapping = {
-  'android-13_0': 'android-13.0',
-  'android-14_0': 'android-14.0',
-  'android-15_0': 'android-15'
+  'android-15_0': 'android-15',
+  'android-16_0': 'android-16'
+}
+// temporary
+var repo_dict = {
+  "android_device_google_raven" : 1,
+  "android_device_google_oriole" : 1,
+  "android_device_asus_zenfone7" : 1,
+  "android_device_asus_zenfone8" : 1,
+  "android_device_asus_zenfone9" : 1,
 }
 
 class DevicesView {
 
-  async loadGithubRepos() {
+  async loadGithubReposFromGerrit() {
     try {
       let url = gerritURL + "/projects/?b=" + currentVersion + "&p=android_device";
       let response = await axios.get(url, {});
@@ -27,6 +35,37 @@ class DevicesView {
     }
   }
 
+  async loadGithubReposFromGithub() {
+    try {
+      var repo_dict = {};
+      let total_pages = 10;
+      let per_page = 50;
+      // TODO filter for branch
+      for (let page = 0; page < total_pages; page++) {
+        let url = githubAPIURL + "/search/repositories?q=android_device+owner:omnirom+pushed:>2022-01-01&per_page="+per_page+"&page="+page;
+        let response = await axios.get(url, {});
+        let s = response.data;
+        if (Object.keys(s["items"]).length == 0) {
+          break
+        }
+        let total_count = s["total_count"];
+        for (const [key, value] of Object.entries(s["items"])){
+          repo_dict[value["name"]] = 1;
+          if (Object.keys(repo_dict).length == total_count) {
+            break;
+          }
+        }
+        if (Object.keys(repo_dict).length == total_count) {
+          break;
+        }
+      }
+
+      this.loadDevice(repo_dict);
+
+    } catch (error) {
+      console.log("loadGithubRepos error " + error);
+    }
+  }
   async loadDevice(devices) {
     var requests = Object.keys(devices).map(repo => axios.get(rawURL + repo + "/" + currentVersion + "/meta/config.json"));
     await Promise.allSettled(requests).then(results => {
@@ -37,7 +76,6 @@ class DevicesView {
               let d = device;
               let url = result.value.config.url
               d['image'] = url.split("meta/")[0] + "/" + d['image'];
-              d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
               devicesList.push(d)
             })
 
@@ -45,7 +83,6 @@ class DevicesView {
             let d = result.value.data;
             let url = result.value.config.url
             d['image'] = url.split("meta/")[0] + "/" + d['image'];
-            d['changelog'] = gerritURL + "/q/project:" + url.split("/")[4] + "+status:merged"
             devicesList.push(d)
           }
         }
@@ -76,7 +113,6 @@ class DevicesView {
               <a href="${device['readme']}" target="_blank" class="btn btn-omni">Readme</a>
             </p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -88,7 +124,6 @@ class DevicesView {
             <h5 class="card-title">${device['model']}</h5>
             <p class="card-text">${device['make']}<br>${device['state']}</p>
             <a href="${device['pageUrl']}" target="_blank" class="btn btn-omni">Download</a>
-            <a href="${device['changelog']}" target="_blank" class="btn btn-omni">Changelog</a>
           </div>
         </div> `;
         devicesContainer.innerHTML += card
@@ -125,9 +160,8 @@ class DevicesView {
       d['state'] = "official";
       d['pageUrl'] = "https://dl.omnirom.org/";
       d['image'] = "/images/default_phone_omni.png";
-      d['changelog'] = gerritURL + "/q/status:merged+android_device"
       devicesList.push(d)
-      await this.loadGithubRepos();
+      await this.loadGithubReposFromGithub();
     } catch (error) {
       console.log("display device view error: " + error);
     }
